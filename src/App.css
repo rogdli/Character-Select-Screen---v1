@@ -1,0 +1,58 @@
+/* Cambia el fondo del contenedor */
+body {
+  background-color: orange; /* Color de fondo para el cuerpo */
+  margin: 0; /* Elimina el margen por defecto */
+  font-family: Arial, sans-serif; /* Fuente por defecto */
+}
+
+.container {
+  background-color: orange; /* Color de fondo */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente si el contenedor tiene altura fija */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Usa Flexbox para alinear las imágenes en una fila */
+.character-roster {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que las imágenes se envuelvan en múltiples líneas si no caben en una fila */
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+/* Define el tamaño uniforme de las imágenes */
+.character img {
+  width: 100px; /* Ancho de la imagen */
+  height: 100px; /* Alto de la imagen */
+  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.character{
+  border: 2px solid;
+  background-color: rgb(255, 197, 91);
+  font-family: sans-serif;
+}
+
+/* Define la animación */
+@keyframes clickAnimation {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(10px); /* Mueve la imagen 10px a la derecha */
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Aplica la animación a las imágenes cuando se hace clic */
+.character img:active {
+  animation: clickAnimation 0.2s ease;
+}
+
+
